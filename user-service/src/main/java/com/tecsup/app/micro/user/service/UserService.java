@@ -7,6 +7,8 @@ import com.tecsup.app.micro.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 //@AllArgsConstructor
@@ -28,4 +30,8 @@ public class UserService {
         return  mapper.toDomain(entity);
     }
 
+    public List<User> getAllUsers() {
+        List<UserEntity> entities = userRepository.findAll();
+        return this.mapper.toDomain(entities);
+    }
 }

@@ -26,7 +26,7 @@ public class UserClient {
 
     public User getUserById(Long createdBy) {
 
-        String url = "http://localhost:8081/api/users/" +   createdBy;
+        String url = userServiceUrl + "/api/users/" + createdBy;
 
         try {
             User usr = restTemplate.getForObject(url, User.class);
@@ -41,16 +41,14 @@ public class UserClient {
 
         }
 
-
-
         //Aqui usamos el @Builder, nos permite generar data estática, nos ayuda con el constructor
 
         /*return User.builder()
                 .name("John Doe")
                 .build();*/
-
-
     }
+
+
 
 
 }

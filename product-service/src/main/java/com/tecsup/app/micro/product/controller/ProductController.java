@@ -1,13 +1,12 @@
 package com.tecsup.app.micro.product.controller;
 
 import com.tecsup.app.micro.product.dto.Product;
+import com.tecsup.app.micro.product.dto.ProductRequest;
 import com.tecsup.app.micro.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
@@ -31,6 +30,12 @@ public class ProductController {
         log.info("REST request to get product by id: {}", id);
         return ResponseEntity.ok(productService.getProductById(id));
 
+    }
+
+    @PostMapping
+    public ResponseEntity<Product> createProduct(@RequestBody ProductRequest request) {
+        Product product = productService.createProduct(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(product);
     }
 
 }

@@ -2,6 +2,7 @@ package com.tecsup.app.micro.product.mapper;
 
 import com.tecsup.app.micro.product.client.User;
 import com.tecsup.app.micro.product.dto.Product;
+import com.tecsup.app.micro.product.dto.ProductRequest;
 import com.tecsup.app.micro.product.entity.ProductEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -11,9 +12,12 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    Product toDomain (ProductEntity entity);
+    Product toDomain(ProductEntity entity);
 
     ProductEntity toEntity(Product domain);
+
+    ProductEntity toEntity(ProductRequest request);
+
 
     //Como implementar un método en una interface, con default
     default Product toDomainWithUser(ProductEntity productEntity, User user) {

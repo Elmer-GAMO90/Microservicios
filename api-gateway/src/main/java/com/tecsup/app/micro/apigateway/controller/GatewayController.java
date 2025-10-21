@@ -19,4 +19,6 @@ public class GatewayController {
     public Flux<RouteDefinition> getRoutes() {
         return routeDefinitionLocator.getRouteDefinitions();
     }
+
+    //Subiendo tooo los proyectos
 }

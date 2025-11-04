@@ -1,10 +1,6 @@
 spring:
   application:
-    name: api-gateway
-
-  profiles:
-    active: default
-
+    name: order-service
   cloud:
     config:
       uri: http://localhost:8084

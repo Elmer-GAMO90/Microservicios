@@ -7,6 +7,8 @@ import com.tecsup.app.micro.product.entity.ProductEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
 
@@ -17,6 +19,8 @@ public interface ProductMapper {
     ProductEntity toEntity(Product domain);
 
     ProductEntity toEntity(ProductRequest request);
+
+    List<Product> toDomain(List<ProductEntity> entities);
 
 
     //Como implementar un método en una interface, con default

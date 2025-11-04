@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -88,5 +89,15 @@ public class ProductService {
 
     }
 
+    public List<Product> getAllProducts() {
+        List<ProductEntity> entities = productRepository.findAll();
+
+        /*ProductEntity productEntity = productRepository.findById(id).orElse(null);
+
+        User user = userClient.getUserById(productEntity.getCreatedBy());
+        log.info("User : {}", user);*/
+
+        return this.mapper.toDomain(entities);
+    }
 
 }

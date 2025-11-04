@@ -12,6 +12,8 @@ spring:
         git:
             # File URI - Adjust path according to your system:
             # Windows: file:///C:/Users/YourUser/microservices-lab1/config-repo
-            uri: D:/TodoAprendizaje/CursoFullStackJavaTECSUP/ClasesGrabadas/5-SpringExperto/config-repo
+            uri: file://D:/TodoAprendizaje/CursoFullStackJavaTECSUP/ClasesGrabadas/5-SpringProfesional/config-repo
             # Git Configuration
             default-label: main
+            search-paths:
+              - .

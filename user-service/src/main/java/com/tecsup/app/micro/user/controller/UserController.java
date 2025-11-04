@@ -25,7 +25,7 @@ public class UserController {
     }
 
     //All get users
-    @GetMapping
+    @GetMapping("/all")
     public List<User> getAllUsers() {
         log.info("REST request to get all users");
         return userService.getAllUsers();
